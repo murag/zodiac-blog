@@ -9,10 +9,6 @@ title: Welcome to Middleman
   p.doc
     == link_to "Read Online Documentation", "http://middlemanapp.com/"
 
-  - blog.articles.each do |articler|
-    article
-      h1
-        = link_to articler.title, hostUrl(articler.url)
 
 
 / - blog.articles.each do |article|
@@ -22,3 +18,9 @@ title: Welcome to Middleman
 /       time = article.date.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[article.date.wday]})")
 /     = article.summary
 /     = link_to 'もっと読む', hostUrl(article.url)
+nav#global-nav
+  ul
+    - 5.times {
+    li.list-item
+      a href="#" ナビゲーションの項目
+    - }
