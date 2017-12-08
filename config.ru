@@ -25,6 +25,6 @@ run lambda { |env|
       "Content-Type" => "text/html",
       "Cache-Control" => "public, max-age=60"
     },
-    File.open("build/2017-12-19-sample/index.html", File::RDONLY)
+    File.open("build/404/index.html", File::RDONLY)
   ]
 }
