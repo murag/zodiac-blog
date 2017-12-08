@@ -48,3 +48,18 @@ activate :directory_indexes
 
 # Append hashes to compiled assets
 activate :asset_hash
+
+activate :blog do |blog|
+  # ブログ機能のオプションを設定
+  blog.default_extension = ".md"
+end
+
+helpers do
+  def hostUrl link
+    link
+  end
+end
+
+## GitHub Flavored Markdown
+set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
+set :markdown_engine, :redcarpet

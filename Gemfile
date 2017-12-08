@@ -15,3 +15,8 @@ gem 'middleman', '>= 4.0.0'
 gem 'rake'
 gem 'puma'
 gem 'rack-contrib'
+
+gem 'middleman-blog', '~> 4.0'
+
+gem 'redcarpet'
+gem 'nokogiri'
