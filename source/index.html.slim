@@ -13,7 +13,7 @@ title: Welcome to Middleman
 
 
 div#global-nav
-  - page_articles.each do |article|
+  - blog.articles.each do |article|
     article
       h1
         = link_to article.title, hostUrl(article.url)
