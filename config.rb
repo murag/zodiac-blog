@@ -51,21 +51,20 @@ activate :asset_hash
 
 activate :blog do |blog|
   # ブログ機能のオプションを設定
-  blog.default_extension = ".md"
-  blog.prefix = "blog"
-  blog.permalink = "{category}/{title}.html"
-  blog.sources = "{year}-{month}-{day}-{title}.html"
-  blog.taglink = "tags/{tag}.html"
-  blog.layout = "layouts/layout"
+  # blog.prefix = "blog"
+  # blog.permalink = "{category}/{title}.html"
+  # blog.sources = "{year}-{month}-{day}-{title}.html"
+  # blog.taglink = "tags/{tag}.html"
+  # blog.layout = "layouts/layout"
 
   # blog.summary_separator = /()/
   # blog.summary_length = 250
-  blog.year_link = "{year}.html"
+  # blog.year_link = "{year}.html"
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
   blog.default_extension = ".md"
-  blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
+  # blog.tag_template = "tag.html"
+  # blog.calendar_template = "calendar.html"
 end
 
 helpers do
