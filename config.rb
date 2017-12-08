@@ -49,9 +49,11 @@ activate :directory_indexes
 # Append hashes to compiled assets
 activate :asset_hash
 
+Time.zone = "Tokyo"
+
 activate :blog do |blog|
   # ブログ機能のオプションを設定
-  # blog.prefix = "blog"
+  blog.prefix = "blog"
   # blog.permalink = "{category}/{title}.html"
   # blog.sources = "{year}-{month}-{day}-{title}.html"
   # blog.taglink = "tags/{tag}.html"
