@@ -1,8 +1,8 @@
 ---
 pageable: true
 per_page: 10
-title: Welcome to Middleman
---- 
+title: Welcome to Zodiac Blog
+---
 svg.middleman-logo[xmlns="http://www.w3.org/2000/svg" viewbox="0 0 400 340" aria-labelledby="middleman-logo__title" role="img"]
   path.middleman-logo__top-left-bar[fill-opacity=".45" d="M0 40L200 0v30L0 60z"]
   path.middleman-logo__top-right-bar[fill="#fff" d="M200 0l200 40v20L200 30z"]
@@ -11,7 +11,7 @@ svg.middleman-logo[xmlns="http://www.w3.org/2000/svg" viewbox="0 0 400 340" aria
   path.middleman-logo__bottom-left-bar[fill-opacity=".45" d="M0 300l200 40v-30L0 280z"]
   path.middleman-logo__bottom-right-bar[fill="#fff" d="M200 340l200-40v-20l-200 30z"]
 h1
-  |  Welcome to Middleman
+  |  Welcome to Zodiac Blog
 - if paginate && num_pages > 1
   p
     | Page
@@ -24,10 +24,26 @@ h1
 - page_articles.each_with_index do |article, i|
   h2
     = link_to article.title, article
-    span
+    div
       = article.date.strftime('%b %e')
   = article.body
 - if paginate
   - if next_page
     p
       = link_to 'Next page', next_page
+
+aside
+  h2
+    | Recent Articles
+  - blog.articles[0...10].each do |article|
+    = link_to article.title, article
+    div
+      = article.date.strftime('%b %e')
+  h2
+    | Tags
+  - blog.tags.each do |tag, articles|
+    = link_to "#{tag} (#{articles.size})", tag_path(tag)
+  h2
+    | By Year
+  - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+    = link_to "#{year} (#{articles.size})", blog_year_path(year)

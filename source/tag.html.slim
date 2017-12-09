@@ -1,7 +1,7 @@
 ---
 pageable: true
 per_page: 12
---- 
+---
 h1
   | Articles tagged '
   = tagname
@@ -15,12 +15,12 @@ h1
   - if prev_page
     p
       = link_to 'Previous page', prev_page
-ul
-  - page_articles.each_with_index do |article, i|
-    li
-      = link_to article.title, article
-      span
-        = article.date.strftime('%b %e')
+
+- page_articles.each_with_index do |article, i|
+  div
+    = link_to article.title, article
+    p
+      = article.date.strftime('%b %e')
 - if paginate
   - if next_page
     p
