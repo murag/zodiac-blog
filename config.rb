@@ -47,9 +47,9 @@ helpers do
 end
 
 ## GitHub Flavored Markdown
-set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
-
-set :markdown_engine, :redcarpet
+# set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
+#
+# set :markdown_engine, :redcarpet
 
 
 # With alternative layout
