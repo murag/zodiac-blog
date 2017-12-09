@@ -11,6 +11,7 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+
 set :slim,
     :format => :html,
     :sort_attrs => false,
@@ -34,7 +35,7 @@ activate :blog do |blog|
   # blog.year_link = "{year}.html"
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
-  blog.default_extension = ".md"
+  # blog.default_extension = ".md"
   # blog.tag_template = "tag.html"
   # blog.calendar_template = "calendar.html"
 end
@@ -47,6 +48,7 @@ end
 
 ## GitHub Flavored Markdown
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
+
 set :markdown_engine, :redcarpet
 
 
