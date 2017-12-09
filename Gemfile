@@ -16,3 +16,9 @@ gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
+
+gem 'rake'
+gem 'puma'
+gem 'rack-contrib'
+
+ruby "2.4.2"
