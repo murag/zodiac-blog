@@ -11,9 +11,19 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+set :slim,
+    :format => :html,
+    :sort_attrs => false,
+    :pretty => true,
+    :shortcut => {
+      "#" => {:tag => "div", :attr => "id"},
+      "." => {:tag => "div", :attr => "class"},
+      "&" => {:tag => "input", :attr => "type"}
+    }
+
 activate :blog do |blog|
   # ブログ機能のオプションを設定
-  blog.prefix = "blog"
+  # blog.prefix = "blog"
   # blog.permalink = "{category}/{title}.html"
   # blog.sources = "{year}-{month}-{day}-{title}.html"
   # blog.taglink = "tags/{tag}.html"
