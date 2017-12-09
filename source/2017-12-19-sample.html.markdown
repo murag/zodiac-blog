@@ -1,6 +1,0 @@
----
-title: sample
----
-# タイトル
-
-sample
