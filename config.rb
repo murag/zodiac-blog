@@ -24,7 +24,7 @@ set :slim,
 activate :blog do |blog|
   # ブログ機能のオプションを設定
   # blog.prefix = "blog"
-  blog.permalink = "{year}/{title}.html"
+  # blog.permalink = "{year}/{title}.html"
   # blog.sources = "{year}-{month}-{day}-{title}.html"
   # blog.taglink = "tags/{tag}.html"
   # blog.layout = "layouts/layout"
