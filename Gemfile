@@ -22,3 +22,7 @@ gem 'puma'
 gem 'rack-contrib'
 
 ruby "2.4.2"
+
+gem "slim"
+
+gem "html2slim"
