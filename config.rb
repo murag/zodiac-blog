@@ -23,7 +23,6 @@ page '/*.txt', layout: false
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
-
   # blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
   # blog.sources = "{year}-{month}-{day}-{title}.html"
@@ -35,7 +34,6 @@ activate :blog do |blog|
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
   blog.default_extension = ".md"
-
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
 
@@ -66,3 +64,12 @@ configure :build do
   # Minify Javascript on build
   # activate :minify_javascript
 end
+
+activate :external_pipeline, {
+  name: :webpack,
+  command: build? ?
+    "NODE_ENV=production npm run build" :
+    "NODE_ENV=develop npm run develop",
+  source: "./build",
+  latency: 1
+}

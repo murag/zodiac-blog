@@ -1,7 +1,7 @@
 ---
 pageable: true
 per_page: 10
-title: Welcome to Zodiac Blog
+title: Home
 ---
 svg.middleman-logo[xmlns="http://www.w3.org/2000/svg" viewbox="0 0 400 340" aria-labelledby="middleman-logo__title" role="img"]
   path.middleman-logo__top-left-bar[fill-opacity=".45" d="M0 40L200 0v30L0 60z"]
@@ -42,8 +42,10 @@ aside
   h2
     | Tags
   - blog.tags.each do |tag, articles|
-    = link_to "#{tag} (#{articles.size})", tag_path(tag)
+    p
+      = link_to "#{tag} (#{articles.size})", tag_path(tag)
   h2
     | By Year
   - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-    = link_to "#{year} (#{articles.size})", blog_year_path(year)
+    p
+      = link_to "#{year} (#{articles.size})", blog_year_path(year)

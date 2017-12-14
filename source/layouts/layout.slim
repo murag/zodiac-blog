@@ -5,10 +5,9 @@ html
     meta[http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"]
     meta[name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"]
     title
-      = current_page.data.title || "Middleman"
+      = "#{current_page.data.title} | Zodiac Blog"
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
-    = stylesheet_link_tag "site"
-    = javascript_include_tag "site"
+    == stylesheet_link_tag "bundle"
+    == javascript_include_tag  "bundle", async: 'async'
   body
     = yield
-    
