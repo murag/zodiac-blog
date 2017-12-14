@@ -13,7 +13,6 @@
   "devDependencies": {
     "bootstrap": "^4.0.0-beta.2",
     "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "node-sass": "^4.7.2",
     "popper.js": "^1.12.9",
@@ -21,7 +20,7 @@
     "precss": "^2.0.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
-    "parcel": ""
+    "parcel-bundler": "^1.2.0"
   },
   "keywords": [],
   "author": "murag <undakada5270@gmail.com>",
