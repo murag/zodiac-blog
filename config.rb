@@ -66,11 +66,12 @@ configure :build do
   # activate :minify_javascript
 end
 
+# 相対パス指定にする
+activate :relative_assets
+
 activate :external_pipeline, {
-  name: :webpack,
-  command: build? ?
-    "NODE_ENV=production yarn run build" :
-    "NODE_ENV=develop yarn run develop",
-  source: "./build",
-  latency: 1
+    name: :parcel,
+    command: "parcel build source/javascripts/site.js --out-dir build/javascripts/",
+    source: './build',
+    latency: 1
 }
