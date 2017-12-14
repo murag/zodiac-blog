@@ -71,6 +71,7 @@ activate :relative_assets
 
 activate :external_pipeline, {
     name: :parcel,
+    command: "yarn install",
     command: "parcel build source/javascripts/site.js --out-dir build/javascripts/",
     source: './build',
     latency: 1
