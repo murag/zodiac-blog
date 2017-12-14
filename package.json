@@ -21,7 +21,7 @@
     "precss": "^2.0.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
-    "parcel": 
+    "parcel": ""
   },
   "keywords": [],
   "author": "murag <undakada5270@gmail.com>",
