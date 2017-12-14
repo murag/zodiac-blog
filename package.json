@@ -26,6 +26,6 @@
   "author": "murag <undakada5270@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "postinstall": "yarn run parcel build source/javascripts/site.js --out-dir build/javascripts/"
+    "postinstall": "node_module/.bin/parcel build source/javascripts/site.js --out-dir build/javascripts/"
   }
 }
