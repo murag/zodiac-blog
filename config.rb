@@ -69,8 +69,8 @@ end
 activate :external_pipeline, {
   name: :webpack,
   command: build? ?
-    "NODE_ENV=production npm run build" :
-    "NODE_ENV=develop npm run develop",
+    "NODE_ENV=production yarn run build" :
+    "NODE_ENV=develop yarn run develop",
   source: "./build",
   latency: 1
 }
