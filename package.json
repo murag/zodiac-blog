@@ -24,5 +24,8 @@
   },
   "keywords": [],
   "author": "murag <undakada5270@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "build": "parcel build source/javascripts/site.js --out-dir build/javascripts/"
+  }
 }
