@@ -23,8 +23,5 @@
   },
   "keywords": [],
   "author": "murag <undakada5270@gmail.com>",
-  "license": "ISC",
-  "scripts": {
-    "postinstall": "node_modules/.bin/parcel build source/javascripts/site.js --out-dir build/javascripts/"
-  }
+  "license": "ISC"
 }
