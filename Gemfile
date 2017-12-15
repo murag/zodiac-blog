@@ -12,3 +12,10 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw]
 
 # Middleman Gems
 gem 'middleman', '>= 4.0.0'
+gem 'middleman-blog', '~> 4.0'
+
+gem 'redcarpet'
+gem 'nokogiri'
+
+# gem "middleman-livereload", "~> 3.4.3"
+gem 'sass'
