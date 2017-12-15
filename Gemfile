@@ -20,7 +20,7 @@ gem 'redcarpet'
 gem 'nokogiri'
 
 # gem "middleman-livereload", "~> 3.4.3"
-gem 'sass'
+# gem 'sass', '>= 3.4'
 
 gem 'rake'
 gem 'puma'
