@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import "normalize";
-// @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
 
 body {
   background: #ECC561;
@@ -9,11 +10,11 @@ body {
   font-size: 1em;
 }
 
-// @include media-breakpoint-up(md) {
-//   body {
-//     background: red;
-//   }
-// }
+@include media-breakpoint-up(md) {
+  body {
+    background: red;
+  }
+}
 
 
 .logo img {
