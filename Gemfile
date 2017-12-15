@@ -21,3 +21,6 @@ gem 'nokogiri'
 
 # gem "middleman-livereload", "~> 3.4.3"
 gem 'sass'
+gem 'rake'
+gem 'puma'
+gem 'rack-contrib'
