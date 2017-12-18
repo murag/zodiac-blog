@@ -5,7 +5,7 @@ html
     meta charset="utf-8"
     meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"
 
-    title = current_page.data.title || "The Middleman"
+    title = "#{current_page.data.title} | Zodiac Blog"
 
     link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'
 
@@ -13,4 +13,24 @@ html
     == javascript_include_tag  "all"
 
   body class="#{page_classes}"
+    .header
+      a.site-logo href='#'
+        div.logo-wrap
+          span.site-name Zodiac Blog
+      nav.grobalNavi
+        ul.nav-lists
+          li.nav-list
+              a.topic href="#" nav1
+          li.nav-list
+              a.topic href="#" nav2
+          li.nav-list
+              a.topic href="#" nav3
+          li.nav-list
+              a.topic href="#" nav4
+          li.nav-list
+              a.topic href="#" nav5
+          li.nav-list
+              a.topic href="#" nav6
+
+
     == yield

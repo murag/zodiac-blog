@@ -1,6 +1,9 @@
-//= require_tree .
-import "../stylesheets/site.css.scss"
+// import "../stylesheets/site.css.scss"
 
-var $ = window.$ = window.jQuery = require('jquery');
-window.Popper = require('popper.js');
-require('bootstrap');
+
+// require('jquery');
+// window.Popper = require('popper.js');
+// require('bootstrap');
+require('./scroll.js');
+// console.log("zodiac");
+// var ifrac = 9;

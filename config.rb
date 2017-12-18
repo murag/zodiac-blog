@@ -69,6 +69,9 @@ set :markdown_engine, :redcarpet
 #   end
 # end
 
+# set :css_dir,      'source/stylesheets'
+# set :js_dir,       'source/javascripts'
+
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
