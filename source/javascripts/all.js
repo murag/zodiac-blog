@@ -1,9 +1,11 @@
-// import "../stylesheets/site.css.scss"
+import "../stylesheets/site.css.scss"
 
+// (function(){
+//   require('jquery');
+// })
 
-// require('jquery');
 // window.Popper = require('popper.js');
 // require('bootstrap');
-require('./scroll.js');
-// console.log("zodiac");
-// var ifrac = 9;
+// $(document).ready(function(){
+  require('./scroll.js');
+// });

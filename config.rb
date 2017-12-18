@@ -21,6 +21,7 @@ page '/*.txt', layout: false
 ###
 # Helpers
 ###
+# config.action_controller.asset_host = "http://assets.example.com/"
 
 set :time_zone, 'Tokyo'
 
@@ -69,8 +70,8 @@ set :markdown_engine, :redcarpet
 #   end
 # end
 
-# set :css_dir,      'source/stylesheets'
-# set :js_dir,       'source/javascripts'
+set :css_dir,      'source/stylesheets'
+set :js_dir,       'source/javascripts'
 
 # Build-specific configuration
 configure :build do
@@ -79,13 +80,15 @@ configure :build do
 
   # Minify Javascript on build
   # activate :minify_javascript
+  ignore /stylesheets\/.*\.scss/
+  ignore /javascripts\/.*\.js/
 end
 
 activate :relative_assets
 
 activate :external_pipeline, {
     name: :parcel,
-    command: "parcel build source/javascripts/all.js --out-dir build/javascripts/",
+    command: "parcel build source/javascripts/all.js --out-dir build/assets/",
     source: "./build",
     latency: 1
 }
