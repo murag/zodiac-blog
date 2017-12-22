@@ -4,7 +4,14 @@ header {
   left: 0;
   width: 100%;
 
-  .nav-toggle {
+  @include max-screen($breakpoint-mobile) {
+    height: 80px;
+    background-color: white;
+    border-bottom: solid 1px #eee;
+  };
+
+  .navToggle {
+    display: none;
     position: absolute;
     right: 15px;
     top: 25px;
@@ -12,6 +19,10 @@ header {
     height: 25px;
     cursor: pointer;
     z-index: 1;
+
+    @include max-screen($breakpoint-mobile) {
+      display: block;
+    }
 
     div {
       position: relative;
@@ -25,14 +36,17 @@ header {
 
         &:nth-child(1) {
           top: 0px;
+
         }
 
         &:nth-child(2) {
           top: 11px;
+
         }
 
         &:nth-child(3) {
           top: 22px;
+
         }
       }
     }
@@ -53,6 +67,12 @@ header {
     box-sizing: border-box;
     transition: background-color 1s,color 1s;
     z-index: 1;
+
+    @include max-screen($breakpoint-tablet) {
+      left: 1rem;
+      width: 130px;
+      height: 90px;
+    };
 
     &:hover {
       color: white;
@@ -80,12 +100,23 @@ header {
     width: 100%;
     border-width: 1px 0;
 
+    @include max-screen($breakpoint-mobile) {
+      width: 200px;
+      right: 0;
+      top: -500px;
+      background-color: white;
+    };
+
     .nav-lists {
       list-style: none;
       display: flex;
       justify-content: center;
       margin: 0;
       padding: 0;
+
+      @include max-screen($breakpoint-mobile) {
+        flex-direction: column;
+      };
 
       &::after {
         content: "";
@@ -116,6 +147,16 @@ header {
           width: 0;
         }
 
+        @include max-screen($breakpoint-mobile) {
+          border-top: solid 1px #ccc;
+          border-left: solid 1px #ccc;
+          border-right: solid 1px #ccc;
+
+          &:last-child {
+            border-bottom: solid 1px #ccc;
+          }
+        };
+
         .topic {
           display: block;
           width: 111px;
@@ -125,9 +166,20 @@ header {
           padding: 5px 0;
           transition: color 0.7s;
 
+          @include max-screen($breakpoint-tablet) {
+            width: 80px;
+          };
+
+
+
           &:hover {
             color: red;
           }
+
+          @include max-screen($breakpoint-mobile) {
+            width: 100%;
+            padding: 0;
+          };
 
 
         }
@@ -137,49 +189,38 @@ header {
   }
 
 
-.scrollOn {
-  background-color: white;
-  transition: background-color 1s;
-}
-.scrollOff {
-  background-color: none;
-  transition: background-color 1s;
-}
-}
-.navToggle {
-  display:none; /*通常時は非表示にしておきます*/
-  position:absolute; /*bodyに対しての絶対位置指定です*/
-  right:13px;
-  top:13px;
-  width:30px;
-  height:25px;
-  cursor:pointer;
-
-  @include max-screen($breakpoint-mobile) {
-    display: block;
-  };
-
-  div {
-    position: relative;
+  .scrollOn {
+    background-color: white;
+    transition: background-color 1s,transform .5s ease-in-out;
   }
+  .scrollOff {
+    background-color: none;
+    transition: background-color 1s,transform .5s ease-in-out;
+  }
+}
 
-  span {
-    display: block;
-    position: absolute;
-    width: 100%;
-    border-bottom: solid 3px #999;
-    transition: .35s ease-in-out;
-
-    &:nth-child(1) {
-      top: 0;
+@include max-screen($breakpoint-mobile) {
+  .openNav {
+    .navToggle {
+      span {
+        &:nth-child(1) {
+          top: 11px;
+          -webkit-transform:rotate(-45deg);
+          -moz-transform:rotate(-45deg);
+          transform:rotate(-45deg);
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+          top: 11px;
+          -webkit-transform:rotate(45deg);
+          -moz-transform:rotate(45deg);
+          transform:rotate(45deg);
+        }
+      }
     }
 
-    &:nth-child(2) {
-      top: 11px;
-    }
-
-    &:nth-child(3) {
-      top: 22px;
+    .globalNavi {
+      transform: translateY(580px)
     }
   }
 }
