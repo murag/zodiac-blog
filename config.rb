@@ -87,9 +87,9 @@ end
 
 activate :relative_assets
 
-# activate :external_pipeline, {
-#     name: :parcel,
-#     command: "parcel build source/javascripts/all.js --out-dir build/assets/",
-#     source: "./build",
-#     latency: 1
-# }
+activate :external_pipeline, {
+    name: :parcel,
+    command: "parcel build source/javascripts/all.js --out-dir build/assets/",
+    source: "./build",
+    latency: 1
+}
