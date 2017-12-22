@@ -10,5 +10,6 @@ $(document).ready(function(){
   });
   $('.navToggle').click(function(){//headerに .openNav を付加・削除
         $('header').toggleClass('openNav');
+        $('.content').toggleClass('blind');
     });
 });
