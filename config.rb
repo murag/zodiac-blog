@@ -76,7 +76,8 @@ set :js_dir,       'source/javascripts'
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
-  # activate :minify_css
+  activate :asset_hash
+  activate :minify_css
 
   # Minify Javascript on build
   # activate :minify_javascript
@@ -88,7 +89,7 @@ activate :relative_assets
 
 activate :external_pipeline, {
     name: :parcel,
-    command: "parcel build source/javascripts/all.js --out-dir build/assets/",
+    command: "parcel source/javascripts/all.js --out-dir build/assets/",
     source: "./build",
     latency: 1
 }

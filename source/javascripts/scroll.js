@@ -8,4 +8,7 @@ $(document).ready(function(){
       $('.globalNavi').addClass('scrollOff').removeClass('scrollOn');
     }
   });
+  $('.navToggle').click(function(){//headerに .openNav を付加・削除
+        $('header').toggleClass('openNav');
+    });
 });

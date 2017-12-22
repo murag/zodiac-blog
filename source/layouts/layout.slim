@@ -16,24 +16,28 @@ html
     script src="/assets/all.js" type="text/javascript"
 
   body class="#{page_classes}"
-    .header
+    header
+      div.navToggle
+        div.
+          - 3.times do
+            span
       a.site-logo href='/'
         div.logo-wrap
           span.site-name Zodiac Blog
       nav.globalNavi.scrollOff
         ul.nav-lists
           li.nav-list
-              a.topic href="#" navi 1
+              a.topic href="#" navi1
           li.nav-list
-              a.topic href="#" navi 2
+              a.topic href="#" navi2
           li.nav-list
-              a.topic href="#" navi 3
+              a.topic href="#" navi3
           li.nav-list
-              a.topic href="#" navi 4
+              a.topic href="#" navi4
           li.nav-list
-              a.topic href="#" navi 5
+              a.topic href="#" navi5
           li.nav-list
-              a.topic href="#" navi 6
+              a.topic href="#" navi6
 
     .content
       == yield
