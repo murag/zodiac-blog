@@ -9,13 +9,14 @@ header {
     height: 80px;
     background-color: white;
     border-bottom: solid 1px #eee;
-  };
+    height: 65px;
+  }
 
   .navToggle {
     display: none;
     position: absolute;
     right: 15px;
-    top: 25px;
+    top: 17px;
     width: 30px;
     height: 25px;
     cursor: pointer;
@@ -73,7 +74,7 @@ header {
       left: 1rem;
       width: 130px;
       height: 90px;
-    };
+    }
 
     &:hover {
       color: white;
@@ -106,7 +107,7 @@ header {
       right: 0;
       top: -500px;
       background-color: white;
-    };
+    }
 
     .nav-lists {
       list-style: none;
@@ -117,7 +118,7 @@ header {
 
       @include max-screen($breakpoint-mobile) {
         flex-direction: column;
-      };
+      }
 
       &::after {
         content: "";
@@ -153,10 +154,14 @@ header {
           border-left: solid 1px #ccc;
           border-right: solid 1px #ccc;
 
+          &::after {
+            background-color: transparent;
+          }
+
           &:last-child {
             border-bottom: solid 1px #ccc;
           }
-        };
+        }
 
         .topic {
           display: block;
@@ -164,13 +169,12 @@ header {
           height: 76px;
           color: inherit;
           text-decoration: none;
-          padding: 5px 0;
+          padding: 0 0 5px 0;
           transition: color 0.7s;
 
           @include max-screen($breakpoint-tablet) {
             width: 80px;
-          };
-
+          }
 
 
           &:hover {
@@ -180,11 +184,8 @@ header {
           @include max-screen($breakpoint-mobile) {
             width: 100%;
             padding: 0;
-          };
-
-
+          }
         }
-
       }
     }
   }
@@ -221,7 +222,7 @@ header {
     }
 
     .globalNavi {
-      transform: translateY(580px)
+      transform: translateY(565px)
     }
   }
 }
