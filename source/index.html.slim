@@ -18,11 +18,11 @@ pageable: true
     = link_to 'もっと読む', hostUrl(article.url)
 
 
-/ - paginate    = current_page.metadata[:locals]["paginate"]
-/ - num_pages   = current_page.metadata[:locals]["num_pages"]
-/ - page_number = current_page.metadata[:locals]["page_number"]
-/ - prev_page   = current_page.metadata[:locals]["prev_page"]
-/ - next_page   = current_page.metadata[:locals]["next_page"]
+- paginate    = current_page.metadata[:locals]["paginate"]
+- num_pages   = current_page.metadata[:locals]["num_pages"]
+- page_number = current_page.metadata[:locals]["page_number"]
+- prev_page   = current_page.metadata[:locals]["prev_page"]
+- next_page   = current_page.metadata[:locals]["next_page"]
 
 - if paginate && num_pages > 1
   .pager
