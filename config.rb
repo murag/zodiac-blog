@@ -43,9 +43,9 @@ activate :blog do |blog|
   # blog.calendar_template = "calendar.html"
 
   # Enable pagination
-  # blog.paginate = true
-  # blog.per_page = 10
-  # blog.page_link = "page/{num}"
+  blog.paginate = true
+  blog.per_page = 2
+  blog.page_link = "page/{num}"
 end
 
 helpers do
@@ -80,7 +80,8 @@ configure :build do
   activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
+
   ignore /stylesheets\/.*\.scss/
   ignore /javascripts\/.*\.js/
 end
@@ -89,7 +90,7 @@ activate :relative_assets
 
 activate :external_pipeline, {
     name: :parcel,
-    command: "parcel build source/javascripts/all.js --out-dir build/assets/",
+    command: build? ? "parcel build source/javascripts/all.js --out-dir build/assets/" : "parcel watch source/javascripts/all.js --out-dir build/assets/",
     source: "./build",
     latency: 1
 }

@@ -1,11 +1,13 @@
 ---
 title: Top
+pageable: true
 ---
 
 .welcome
   .logo
     == image_tag 'middleman-logo.svg'
   h1 Zodiac Blog
+
 
 - blog.articles.each do |article|
   article
@@ -14,3 +16,29 @@ title: Top
     = article.date.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[article.date.wday]})")
     = article.summary
     = link_to 'もっと読む', hostUrl(article.url)
+
+
+/ - paginate    = current_page.metadata[:locals]["paginate"]
+/ - num_pages   = current_page.metadata[:locals]["num_pages"]
+/ - page_number = current_page.metadata[:locals]["page_number"]
+/ - prev_page   = current_page.metadata[:locals]["prev_page"]
+/ - next_page   = current_page.metadata[:locals]["next_page"]
+
+- if paginate && num_pages > 1
+  .pager
+    - if prev_page
+      = link_to prev_page, class: "btn pager__prev"
+        i.fa.fa-chevron-left
+        |前のページ
+    - else
+      .pager__prev
+    span.pager__nums
+      = page_number
+      |/
+      = num_pages
+    - if next_page
+      = link_to next_page, class: "btn pager__next"
+       | 次のページ
+       i.fa.fa-chevron-right
+    - else
+      .pager__next

@@ -1,7 +1,7 @@
 namespace :assets do
-  task :js_deps_install do
-  sh "yarn install"
-end
+  # task :js_deps_install do
+  #   sh "yarn install"
+  # end
   task :precompile do
     sh "middleman build"
   end
