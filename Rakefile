@@ -6,4 +6,4 @@ namespace :assets do
     sh "middleman build"
   end
 end
-Rake::Task["assets:precompile"].enhance [:js_deps_install]
+# Rake::Task["assets:precompile"].enhance [:js_deps_install]
