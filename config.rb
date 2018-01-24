@@ -70,8 +70,8 @@ set :markdown_engine, :redcarpet
 #   end
 # end
 
-set :css_dir,      'source/stylesheets'
-set :js_dir,       'source/javascripts'
+set :css_dir,      'source/assets/stylesheets'
+set :js_dir,       'source/assets/javascripts'
 
 # Build-specific configuration
 configure :build do
@@ -90,7 +90,7 @@ activate :relative_assets
 
 activate :external_pipeline, {
     name: :parcel,
-    command: build? ? "parcel build source/javascripts/all.js --out-dir build/assets/" : "parcel watch source/javascripts/all.js --out-dir build/assets/",
+    command: build? ? "parcel build source/assets/javascripts/all.js --out-dir build/assets/" : "parcel watch source/assets/javascripts/all.js --out-dir build/assets/",
     source: "./build",
     latency: 1
 }
