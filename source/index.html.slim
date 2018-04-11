@@ -3,42 +3,35 @@ title: Top
 pageable: true
 ---
 
-.welcome
-  .logo
-    == image_tag 'middleman-logo.svg'
-  h1 Zodiac Blog
-
-- blog_articles = current_page.metadata[:locals]["page_articles"]
-- blog_articles.each do |article|
-  article
-    h1
-      = link_to article.title, hostUrl(article.url)
-    = article.date.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[article.date.wday]})")
-    = article.summary
-    = link_to 'もっと読む', hostUrl(article.url)
-
-
-- paginate    = current_page.metadata[:locals]["paginate"]
-- num_pages   = current_page.metadata[:locals]["num_pages"]
-- page_number = current_page.metadata[:locals]["page_number"]
-- prev_page   = current_page.metadata[:locals]["prev_page"]
-- next_page   = current_page.metadata[:locals]["next_page"]
-
-- if paginate && num_pages > 1
-  .pager
-    - if prev_page
-      = link_to prev_page, class: "btn pager__prev"
-        i.fa.fa-chevron-left
-        |前のページ
-    - else
-      .pager__prev
-    span.pager__nums
-      = page_number
-      |/
-      = num_pages
-    - if next_page
-      = link_to next_page, class: "btn pager__next"
-       | 次のページ
-       i.fa.fa-chevron-right
-    - else
-      .pager__next
+.main
+  section#news.module
+    .container
+      .row
+        .col-sm-6.col-sm-offset-3
+          h2.module-title.font-alt
+            | Latest blog posts
+          .module-subtitle.font-serif
+            | A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+      .row.multi-columns-row.post-columns
+        - blog.articles[0...3].each do |article|
+          .col-sm-6.col-md-4.col-lg-4
+            .post.mb-20
+              .post-thumbnail
+                a[href="#{hostUrl(article.url)}"]
+                  img[src="/images/#{article.data.thumbnail}" alt="Blog-post Thumbnail"]
+              .post-header.font-alt
+                h2.post-title
+                  a[href="#{hostUrl(article.url)}"]
+                    | #{article.title}
+                .post-meta
+                  | By 
+                  a[href="#"]
+                    | Takuya Murasaki
+                  |  |
+                  time =  article.date.strftime("%d %B %Y")
+              .post-entry
+                p
+                  | #{article.summary}
+              .post-more
+                a.more-link[href="#{hostUrl(article.url)}"]
+                  | Read more

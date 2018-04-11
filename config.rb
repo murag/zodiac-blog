@@ -76,7 +76,7 @@ set :js_dir,       'source/javascripts'
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
-  activate :asset_hash
+  # activate :asset_hash
   activate :minify_css
 
   # Minify Javascript on build
