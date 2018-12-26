@@ -3,8 +3,6 @@ import "../stylesheets/site.css.scss"
 
 require('./plugins.js');
 
-console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55');
-
 /* ---------------------------------------------- /*
  * Preloader
  /* ---------------------------------------------- */
@@ -13,18 +11,14 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
         $('.loader').fadeOut();
         $('.page-loader').delay(350).fadeOut('slow');
     });
-    console.log('no');
 
     $(document).ready(function() {
-
-      console.log('middlemanapp');
         /* ---------------------------------------------- /*
          * WOW Animation When You Scroll
          /* ---------------------------------------------- */
 
         new WOW().init();
 
-        console.log('ok');
 
         /* ---------------------------------------------- /*
          * Scroll top
